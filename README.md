@@ -42,4 +42,8 @@ To do this, **hold down the left mouse button** and, **without releasing**, move
 </details>
 
 ## Demo :heart_eyes_cat:
-> coming soon
+<kbd>
+  <a href="https://www.youtube.com/watch?v=nN1hk71E5CY">
+    <img src="https://user-images.githubusercontent.com/56264511/173249754-0f692fff-f3cc-4263-9174-95a9d4574839.png">
+  </a>
+</kbd>
