@@ -2,10 +2,10 @@ package just.curiosity.boids_simulation.core;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import just.curiosity.boids_simulation.core.agent.Agent;
 import just.curiosity.boids_simulation.core.constants.Const;
 import just.curiosity.boids_simulation.core.obstacle.Obstacle;
-import just.curiosity.boids_simulation.core.util.OnAgentUpdate;
 import just.curiosity.boids_simulation.core.vector.Vector;
 
 public class Flock {
@@ -13,7 +13,7 @@ public class Flock {
   private final int height;
   private final List<Agent> agents;
   private final List<Obstacle> obstacles;
-  private OnAgentUpdate onAgentUpdate;
+  private Consumer<Agent> onAgentUpdate;
 
   {
     agents = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Flock {
     }
   }
 
-  public void onAgentUpdate(OnAgentUpdate onAgentUpdate) {
+  public void onAgentUpdate(Consumer<Agent> onAgentUpdate) {
     this.onAgentUpdate = onAgentUpdate;
   }
 
@@ -61,7 +61,7 @@ public class Flock {
 
     agent.updateLocation(width, height);
 
-    onAgentUpdate.apply(agent);
+    onAgentUpdate.accept(agent);
   }
 
   // Rule #1 ~ Finding the center of mass and push the agent in its direction.
