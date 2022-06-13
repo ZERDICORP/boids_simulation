@@ -107,7 +107,8 @@ public class Flock {
     return resultVector;
   }
 
-  // Rule #3 ~ Determination of the average speed of agents.
+  // Rule #3 ~ Equating the velocity of an agent to the average velocity of
+  // other agents.
   private Vector alignment(Agent agent, List<Agent> otherAgents) {
     final Vector resultVector = new Vector(0, 0);
     if (otherAgents.size() == 0) {
@@ -123,7 +124,8 @@ public class Flock {
     return resultVector;
   }
 
-  // Rule #4 ~ Avoid user's mouse position.
+  // Rule #4 ~ Detecting too close obstacles and moving the agent in the
+  // opposite direction.
   private Vector avoidance(Agent agent, List<Obstacle> obstacles) {
     final Vector resultVector = new Vector(0, 0);
     if (obstacles.size() == 0) {
